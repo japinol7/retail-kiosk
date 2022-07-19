@@ -1,0 +1,51 @@
+package retail.kiosk.retailkiosk.model;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.Rule;
+
+public class ItemTest {
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+
+	@Test
+	public void testSetStock() throws ItemException {
+		Item item = new MainCourse();
+		
+		// test setting stock to a positive number:  5 units
+		item.setStock(5);
+		assertEquals(5, item.getStock());
+
+		// test setting stock to 0 units
+		item.setStock(0);
+		assertEquals(0, item.getStock());
+
+		// test setting stock to a negative number: -1 units
+		thrown.expect(ItemException.class);
+		thrown.expectMessage("Stock cannot be a negative value!!");
+		item.setStock(-1);
+		assertNotEquals(-1, item.getStock());
+	}
+
+	@Test
+	public void testSetId() throws ItemException {
+		Item item = new MainCourse();
+
+		// test setting id to 0. That means that it has no id.
+		item.setId(0);
+		assertEquals(0, item.getId());
+		
+		// test setting id to a non 0 number:  15
+		item.setId(15);
+		assertEquals(15, item.getId());
+
+		// test setting id to 20 when it has been set previously to 15
+		thrown.expect(ItemException.class);
+		thrown.expectMessage("The id can only be set once. Its current value is: 15!!");
+		item.setId(20);
+		assertNotEquals(20, item.getId());
+	}
+
+}

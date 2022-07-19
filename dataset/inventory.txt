@@ -1,0 +1,35 @@
+1---Action_Figure_Movable---Movable A. Fig. Pac---Movable A. Figure Pac---false---resources/assets/img/pc_pac_001.png---18---0.21---Plastic---false---2
+2---Action_Figure_Movable---Movable A. Fig. Pac Deluxe---Movable A. Figure Pac Deluxe---false---resources/assets/img/pc_pac_001.png---39.99---0.21---Plastic---true---2
+3---Action_Figure_Movable---Movable A. Fig. Demon---Movable A. Figure Demon---false---resources/assets/img/npc_demon_001.png---17.25---0.21---Plastic---false---80
+5---Action_Figure_Movable---Movable A. Fig. Vampire---Movable A. Figure Vampire---false---resources/assets/img/npc_vampire_001.png---17.25---0.21---Plastic---false---80
+6---Action_Figure_Movable---Mov. A. Fig. Vampire Female---Movable A. Figure Vampire Female---false---resources/assets/img/npc_vampire_002.png---17.75---0.21---Plastic---false---80
+50---Action_Figure---Action Fig. Vampire---Action Figure Vampire---false---resources/assets/img/npc_vampire_001.png---12---0.21---Plastic---false---50
+51---Action_Figure---Action Fig. Vampire Female---Action Figure Vampire Female---false---resources/assets/img/npc_vampire_002.png---12---0.21---Plastic---false---50
+52---Action_Figure_Accessory---Figure Accessory Pac RIP---Figure Accessory Pac RIP---false---resources/assets/img/pc_pac_rip_001.png---10.75---0.21---Plastic---false---80
+80---Beverage---Vampire Coke---Vampire Coke---33---0---true---resources/assets/img/vampire_coke.jpg---1.25---0.21---80---false---100
+81---Beverage---Demon Coke---Demon Coke---50---0---true---resources/assets/img/demon_coke.jpg---1.35---0.21---100---false---100
+82---Beverage---Female Vampire Coke---Female Vampire Coke---75---0---true---resources/assets/img/female_vampire_coke.jpg---1.5---0.21---120---false---100
+83---Beverage---Vampire Orangeade---Vampire Orangeade---33---0---true---resources/assets/img/vampire_orangeade.jpg---1---0.21---75---false---60
+84---Beverage---Demon Beer---Demon Orangeade---50---0---true---resources/assets/img/demon_beer.jpg---1.2---0.21---95---false---60
+85---Beverage---Vampire Lemonade---Vampire Lemonade---33---0---false---resources/assets/img/vampire_lemonade.jpg---1.25---0.21---75---false---60
+86---Beverage---Demon Lemonade---Demon Lemonade---50---0---false---resources/assets/img/demon_lemonade.jpg---1.3---0.21---95---false---60
+87---Beverage---Vampire Coffee---Vampire Coffee---10---0---false---resources/assets/img/vampire_coffee.jpg---0.9---0.21---75---false---60
+101---Sticker---Pac sticker 2 units---Pac sticker 2 units---9---resources/assets/img/pac_sticker.png---1.1---0.21---150---false---40
+102---Sticker---Vampire sticker 2 units---Vampire sticker 2 units---9---resources/assets/img/vampire_sticker.jpg---1.5---0.21---150---false---20
+103---Sticker---Demon sticker 2 units---Demon sticker 2 units---9---resources/assets/img/demon_sticker.jpg---1.2---0.21---150---false---30
+121---Clothes_Hat---Vampire hat---Vampire hat---false---resources/assets/img/vampire_hat.jpg---12.5---0.21---330---false---60
+122---Clothes_Hat---Pac hat---Pac hat---true---resources/assets/img/pac_hat.jpg---15.75---0.21---150---false---60
+121---Clothes_Hat---Demon hat---Demon hat---true---resources/assets/img/demon_hat.jpg---14.75---0.21---140---false---10
+0---Clothes_Hat---Werewolf hat---Werewolf hat---true---resources/assets/img/werewolf_hat.jpg---15---0.21---170---false---8
+2001---Pack_Set---Pack 3 Vampires---Pack Vampires---resources/assets/img/dummy.jpg---44---0.21---5,6,50
+2002---Pack_Set---Pack 3 Action Figures---Pack Action Figures---resources/assets/img/dummy.jpg---42---0.21---1,3,5
+2003---Pack_Set---Pack Bats---Pack Bats---resources/assets/img/dummy.jpg---38.5---0.21---4,80,101
+2004---Pack_Set---Pack 2 Action Figures---Pack 2 Action Figures---resources/assets/img/dummy.jpg---22.5---0.21---2001,4,80,101
+2005---Pack_Set---Pack 2 Mov. Action Figures---Pack 2 Movable Action Figures---resources/assets/img/dummy.jpg---25.75---0.21---3,5
+2006---Pack_Set---Pack 4 Action Figures---Pack 4 Action Figures---resources/assets/img/dummy.jpg---53.25---0.21---1,4,51,102
+2007---Pack_Set---Pack 4 Action Fig. Deluxe---Pack 4 Action Figures Deluxe---resources/assets/img/dummy.jpg---77.5---0.21---2,84,101,51
+2008---Pack_Set---Pack 2 Vampires---Pack_Set---Pack 2 Vampires---resources/assets/img/dummy.jpg---24---0.21---121,5
+2009---Pack_Set---Pack A1---Pack A1---resources/assets/img/dummy.jpg---45---0.21---2,83,101
+2010---Pack_Set---Pack A2---Pack A2---resources/assets/img/dummy.jpg---47---0.21---4,83,101
+2011---Pack_Set---Pack A3---Pack A3---resources/assets/img/dummy.jpg---20---0.21---2
+2015---Pack_Set---Pack A4---Pack A4---resources/assets/img/dummy.jpg---55---0.21---4,4,95,101

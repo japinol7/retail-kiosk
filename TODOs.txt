@@ -1,0 +1,5 @@
+## TODOs & Wishlist ##
+
+1. Add some more item images.
+2. Unit test file with old version. Check.
+

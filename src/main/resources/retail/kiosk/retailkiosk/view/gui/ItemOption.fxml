@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="200.0" prefWidth="110.0" style="-fx-border-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ImageView fitHeight="126.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true"/>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="72.0" prefWidth="104.0" text="Label"
+                       textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="72.0" prefWidth="65.0" text="Label"
+                       textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets right="2.0"/>
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+    <cursor>
+        <Cursor fx:constant="HAND"/>
+    </cursor>
+</VBox>
