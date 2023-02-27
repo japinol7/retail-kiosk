@@ -30,8 +30,8 @@ public class Kiosk {
         } else {
             inventory = new Inventory(fileNameInventory);
         }
-        promotionDiscounts = new ArrayList<PromotionDiscount>();
-        promotionDiscountNames = new HashSet<String>();
+        promotionDiscounts = new ArrayList<>();
+        promotionDiscountNames = new HashSet<>();
         loadPromotionDiscount();
     }
 
