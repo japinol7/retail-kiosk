@@ -15,7 +15,7 @@
 
 <SplitPane fx:id="splitPane" dividerPositions="0.536096256684492" maxHeight="-Infinity" maxWidth="-Infinity"
            minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="750.0"
-           xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="retail.kiosk.retailkiosk.view.gui.QuotationController">
     <items>
         <VBox prefHeight="798.0" prefWidth="415.0">
