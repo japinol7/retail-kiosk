@@ -10,6 +10,8 @@ import java.util.Timer;
 
 import retail.kiosk.retailkiosk.controller.Kiosk;
 import static retail.kiosk.retailkiosk.config.Config.log;
+import static retail.kiosk.retailkiosk.config.Config.LOG_START_APP_MSG;
+import static retail.kiosk.retailkiosk.config.Config.LOG_END_APP_MSG;
 
 
 public class App extends Application {
@@ -21,9 +23,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        log.info(LOG_START_APP_MSG);
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("JAP RetailKiosk. A self-ordering kiosk");
         this.primaryStage.setResizable(false);
+
         kiosk = new Kiosk();
         setCurrentView(View.START);
         goToScene("StartView.fxml");
@@ -34,6 +38,7 @@ public class App extends Application {
         timer.cancel();
         timer.purge();
         super.stop();
+        log.info(LOG_END_APP_MSG);
     }
 
     public void timerStop() throws Exception {
