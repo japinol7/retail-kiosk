@@ -3,6 +3,12 @@
 3---Action_Figure_Movable---Movable A. Fig. Demon---Movable A. Figure Demon---false---resources/assets/img/npc_demon_001.png---17.25---0.21---Plastic---false---80
 5---Action_Figure_Movable---Movable A. Fig. Vampire---Movable A. Figure Vampire---false---resources/assets/img/npc_vampire_001.png---17.25---0.21---Plastic---false---80
 6---Action_Figure_Movable---Mov. A. Fig. Vampire Female---Movable A. Figure Vampire Female---false---resources/assets/img/npc_vampire_002.png---17.75---0.21---Plastic---false---80
+7---Action_Figure_Movable---Mov. A. Fig. Mage Female---Movable A. Figure Mage Female---false---resources/assets/img/npc_mage_002.png---18.25---0.21---Plastic---false---80
+8---Action_Figure_Movable---Mov. A. Fig. Ewlan---Movable A. Figure Ewlan---false---resources/assets/img/npc_ewlan_001.png---17.90---0.21---Plastic---false---80
+9---Action_Figure_Movable---Mov. A. Fig. Pokoyo---Movable A. Figure Pokoyo---false---resources/assets/img/npc_pokoyo_001.png---15.50---0.21---Plastic---false---80
+10---Action_Figure_Movable---Mov. A. Fig. Kaede---Movable A. Figure Kaede---false---resources/assets/img/npc_kaede_001.png---18.75---0.21---Plastic---false---80
+11---Action_Figure_Movable---Mov. A. Fig. Squirrel---Movable A. Figure Squirrel---false---resources/assets/img/npc_squirrel_001.png---15.75---0.21---Plastic---false---80
+12---Action_Figure_Movable---Mov. A. Fig. Dragon---Movable A. Figure Dragon---false---resources/assets/img/npc_dragon_001.png---17.00---0.21---Plastic---false---80
 50---Action_Figure---Action Fig. Vampire---Action Figure Vampire---false---resources/assets/img/npc_vampire_001.png---12---0.21---Plastic---false---50
 51---Action_Figure---Action Fig. Vampire Female---Action Figure Vampire Female---false---resources/assets/img/npc_vampire_002.png---12---0.21---Plastic---false---50
 52---Action_Figure_Accessory---Figure Accessory Pac RIP---Figure Accessory Pac RIP---false---resources/assets/img/pc_pac_rip_001.png---10.75---0.21---Plastic---false---80
@@ -17,6 +23,9 @@
 101---Sticker---Pac sticker 2 units---Pac sticker 2 units---9---resources/assets/img/pac_sticker.png---1.1---0.21---150---false---40
 102---Sticker---Vampire sticker 2 units---Vampire sticker 2 units---9---resources/assets/img/vampire_sticker.jpg---1.5---0.21---150---false---20
 103---Sticker---Demon sticker 2 units---Demon sticker 2 units---9---resources/assets/img/demon_sticker.jpg---1.2---0.21---150---false---30
+104---Sticker---Kaede sticker 2 units---Kaede sticker 2 units---9---resources/assets/img/kaede_sticker.jpg---1.2---0.21---150---false---30
+105---Sticker---Squirrel sticker 2 units---Squirrel sticker 2 units---9---resources/assets/img/squirrel_sticker.jpg---1.1---0.21---150---false---30
+106---Sticker---Mage sticker 2 units---Mage sticker 2 units---9---resources/assets/img/mage_sticker.jpg---1.15---0.21---150---false---30
 121---Clothes_Hat---Vampire hat---Vampire hat---false---resources/assets/img/vampire_hat.jpg---12.5---0.21---330---false---60
 122---Clothes_Hat---Pac hat---Pac hat---true---resources/assets/img/pac_hat.jpg---15.75---0.21---150---false---60
 121---Clothes_Hat---Demon hat---Demon hat---true---resources/assets/img/demon_hat.jpg---14.75---0.21---140---false---10
