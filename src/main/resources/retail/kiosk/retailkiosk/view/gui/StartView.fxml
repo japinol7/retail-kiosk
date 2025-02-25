@@ -34,7 +34,7 @@
                 <Font size="33.0"/>
             </font>
         </Label>
-        <Label layoutX="16.0" layoutY="797.0" prefHeight="49.0" prefWidth="72.0" text="v. 1" textFill="YELLOW">
+        <Label layoutX="16.0" layoutY="797.0" prefHeight="49.0" prefWidth="126.0" text="v. 1.0.3" textFill="YELLOW">
             <font>
                 <Font size="33.0"/>
             </font>
