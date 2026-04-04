@@ -2,7 +2,7 @@
 
 	JAP Merch's Retail Kiosk.
 	program: JAP Merch's Retail Kiosk.
-	version: 1.0.3
+	version: 1.0.4
 	language: English
 	author: Joan A. Pinol
 	author_nickname: japinol
@@ -10,7 +10,7 @@
 	author_twitter: @japinol
 	description: JAP Merch's Retail Kiosk.
 	requirements: JavaFX
-	Java requires: 21 or greater.
+	Java requires: 25 or greater.
 
 
 ## Screenshots

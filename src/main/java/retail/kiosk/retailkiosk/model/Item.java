@@ -17,12 +17,14 @@ public abstract class Item {
     private int stock, expectedPurchase;
 
     public Item() throws ItemException {
-        this(0, "Dummy", "Dummy description", "./", 0.1, 0, "", false, false, 0);
+        this(0, "Dummy", "Dummy description", "./",
+                0.1, 0, "", false, false, 0);
         setExpectedPurchase(0);
     }
 
-    public Item(int id, String name, String description, String imageSrc, double netPrice, double tax, String material,
-                boolean isMovable, boolean isSpecialEdition, int stock) throws ItemException {
+    public Item(int id, String name, String description, String imageSrc, double netPrice,
+                double tax, String material, boolean isMovable, boolean isSpecialEdition, int stock
+    ) throws ItemException {
         setId(id);
         setName(name);
         setDescription(description);
@@ -44,7 +46,8 @@ public abstract class Item {
     public void setId(int id) throws ItemException {
         // Check if it was not set previously.
         if (getId() != 0) {
-            throw new ItemException("The id can only be set once. Its current value is: " + getId() + "!!");
+            throw new ItemException("The id can only be set once. Its current value is: "
+                    + getId() + "!!");
         }
         this.id = id;
     }
@@ -55,7 +58,8 @@ public abstract class Item {
 
     public void setName(String name) throws ItemException {
         if (name.length() > ITEM_NAME_LEN_MAX)
-            throw new ItemException("The name cannot be longer than " + ITEM_NAME_LEN_MAX + " characters!!");
+            throw new ItemException("The name cannot be longer than " + ITEM_NAME_LEN_MAX
+                    + " characters!!");
         this.name = name;
     }
 

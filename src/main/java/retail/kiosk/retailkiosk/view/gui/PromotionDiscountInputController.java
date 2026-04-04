@@ -59,8 +59,9 @@ public class PromotionDiscountInputController extends Controller {
                 }
             }
         } else {
-                Alert alert = new Alert(Alert.AlertType.WARNING, "This is not a valid promotion discount.\n" +
-                        "Try again or just make an order without a discount");
+                Alert alert = new Alert(
+                        Alert.AlertType.WARNING, "This is not a valid promotion discount.\n"
+                        + "Try again or just make an order without a discount");
                 alert.showAndWait();
                 inputPromotionName.clear();
                 return;

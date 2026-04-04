@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             onMouseReleased="#handleStartButton" prefHeight="860.0" prefWidth="750.0"
-            style="-fx-background-color: #657bff;" xmlns="http://javafx.com/·javafx/21"
+            style="-fx-background-color: #657bff;" xmlns="http://javafx.com/javafx/25"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="retail.kiosk.retailkiosk.view.gui.StartController">
     <children>
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="48.0" prefHeight="74.0"
@@ -34,7 +34,7 @@
                 <Font size="33.0"/>
             </font>
         </Label>
-        <Label layoutX="16.0" layoutY="797.0" prefHeight="49.0" prefWidth="126.0" text="v. 1.0.3" textFill="YELLOW">
+        <Label layoutX="16.0" layoutY="797.0" prefHeight="49.0" prefWidth="126.0" text="v. 1.0.4" textFill="YELLOW">
             <font>
                 <Font size="33.0"/>
             </font>

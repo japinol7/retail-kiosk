@@ -74,8 +74,8 @@ public class Order {
         if (item.isSoldOut())
             throw new OrderException("The item is sold out!! You cannot add it to your order!!");
         if (getTotalGrossCost() + item.getGrossPrice() > ORDER_GROSS_PRICE_MAX)
-            throw new OrderPriceExceededException("Sorry!! Your order cannot exceed " + ORDER_GROSS_PRICE_MAX
-                    + " " + CURRENCY_CODE + " !!");
+            throw new OrderPriceExceededException("Sorry!! Your order cannot exceed "
+                    + ORDER_GROSS_PRICE_MAX + " " + CURRENCY_CODE + " !!");
 
         items.add(item);
         item.increase1ExpectedPurchase();
@@ -83,7 +83,8 @@ public class Order {
 
     public void removeItem(int index) throws OrderException {
         if (isConfirmed())
-            throw new OrderException("The order has already been committed!! You cannot remove an item!!");
+            throw new OrderException(
+                    "The order has already been committed!! You cannot remove an item!!");
 
         items.get(index).decrease1ExpectedPurchase();
         items.remove(index);
@@ -147,13 +148,15 @@ public class Order {
         }
         text.append(DIVISOR_LINE);
 		text.append("TOTAL: ");
-		text.append(String.format("%7s", df.format(getTotalGrossCostWithDiscount()))).append(" " + CURRENCY_CODE + "\n");
+		text.append(String.format("%7s", df.format(
+                getTotalGrossCostWithDiscount()))).append(" " + CURRENCY_CODE + "\n");
 		text.append("Taxes: ");
 		text.append(String.format("%7s", df.format(getTotalTaxesCost()))).append(" " + CURRENCY_CODE);
 
 		if (getPromotionDiscount() != null) {
             text.append("\nDisc.: ");
-            text.append(String.format("%7s", df.format(getTotalDiscountCost()))).append(" " + CURRENCY_CODE);
+            text.append(String.format(
+                    "%7s", df.format(getTotalDiscountCost()))).append(" " + CURRENCY_CODE);
             text.append("   ").append(getDiscount()).append(" %");
         }
 
@@ -178,14 +181,18 @@ public class Order {
     }
 
     private void printReceipt() throws OrderException {
-        // When opening the file, we take advantage of try(...) so it closes the resource for us when it is needed
-        try (var out = new PrintWriter(Paths.get(ORDER_RECEIPT_FILE_PATH, ORDER_RECEIPT_FILE_NAME).toString()
-                    , StandardCharsets.UTF_8);) {
+        // When opening the file, we take advantage of try(...)
+        // so it closes the resource for us when it is necessary
+        try (var out = new PrintWriter(Paths.get(
+                ORDER_RECEIPT_FILE_PATH, ORDER_RECEIPT_FILE_NAME).toString(),
+                StandardCharsets.UTF_8);
+        ) {
             out.println("*** JAP Merch's Retail Kiosk ***\n");
             out.println("|| No. Order: " + id + " ||\n");
             out.println(this);
         } catch (IOException e) {
-            throw new OrderException("Cannot print the order's receipt!! Error: " + e.getMessage());
+            throw new OrderException("Cannot print the order's receipt!! Error: "
+                    + e.getMessage());
         }
     }
 }

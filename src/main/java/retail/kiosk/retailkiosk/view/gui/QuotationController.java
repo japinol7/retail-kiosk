@@ -81,7 +81,8 @@ public class QuotationController extends Controller {
                 break;
             case PACK_SET:
                 try {
-                    Pane n = (Pane) FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CategoriesView.fxml")));
+                    Pane n = (Pane) FXMLLoader.load(Objects.requireNonNull(getClass()
+                            .getResource("CategoriesView.fxml")));
                     for (Node component : n.getChildren()) {
                         component.setOnMouseReleased(
                                 event -> {
@@ -116,10 +117,13 @@ public class QuotationController extends Controller {
 
         for (Item itemInventoryList : currentList) {
             try {
-                Pane n = (Pane) FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ItemOption.fxml")));
-                Image iv = new Image("file:" + itemInventoryList.getImageSrc(), 300, 300, false, false);
+                Pane n = (Pane) FXMLLoader.load(Objects.requireNonNull(getClass()
+                        .getResource("ItemOption.fxml")));
+                Image iv = new Image("file:" + itemInventoryList.getImageSrc(),
+                        300, 300, false, false);
                 ((ImageView) n.getChildren().get(0)).setImage(iv);
-                ((Label) ((HBox) n.getChildren().get(1)).getChildren().get(0)).setText(itemInventoryList.getName());
+                ((Label) ((HBox) n.getChildren().get(1)).getChildren()
+                        .get(0)).setText(itemInventoryList.getName());
 
                 // Add a tooltip with the toString text for each item of the category.
                 // If it is a pack set also display its items
@@ -138,7 +142,8 @@ public class QuotationController extends Controller {
                     n.setStyle("-fx-background-color:#ff0000; -fx-opacity:0.5; -fx-border-color:#ff0000");
                 } else {
                     DecimalFormat df = new DecimalFormat("0.00");
-                    ((Label) ((HBox) n.getChildren().get(1)).getChildren().get(1)).setText(df.format(itemInventoryList.getGrossPrice()) + " ·");
+                    ((Label) ((HBox) n.getChildren().get(1)).getChildren()
+                            .get(1)).setText(df.format(itemInventoryList.getGrossPrice()) + " ·");
                     n.setOnMouseReleased(event -> {
                         try {
                             app.getKiosk().addItem2Order(itemInventoryList);
@@ -147,7 +152,8 @@ public class QuotationController extends Controller {
                         } catch (OrderException e) {
                             e.printStackTrace();
                         } catch (OrderPriceExceededException e) {
-                            String msg = "Sorry!! Your order cannot exceed " + ORDER_GROSS_PRICE_MAX + " " + CURRENCY_CODE + " !!";
+                            String msg = "Sorry!! Your order cannot exceed " + ORDER_GROSS_PRICE_MAX
+                                    + " " + CURRENCY_CODE + " !!";
                             log.warning(msg);
                             msg += WARNING_ORDER_PRICE_EXCEEDED_MSG;
                             Alert alert = new Alert(AlertType.WARNING, msg);
@@ -172,12 +178,14 @@ public class QuotationController extends Controller {
         linesOrder.setAll(app.getKiosk().getItemsOrder());
         listOrder.setItems(linesOrder);
         if (app.getKiosk().getOrderDiscount() > 0.0) {
-            labelTotal.setText(df.format(app.getKiosk().getOrderTotalGrossCostWithDiscount()) + " " + CURRENCY_CODE);
+            labelTotal.setText(df.format(app.getKiosk().getOrderTotalGrossCostWithDiscount())
+                    + " " + CURRENCY_CODE);
             labelDiscountLabel.setVisible(true);
             labelDiscount.setVisible(true);
             labelDiscount.setText(df.format(app.getKiosk().getOrderDiscount()) + " %");
         } else {
-            labelTotal.setText(df.format(app.getKiosk().getOrderTotalGrossCost()) + " " + CURRENCY_CODE);
+            labelTotal.setText(df.format(app.getKiosk().getOrderTotalGrossCost())
+                    + " " + CURRENCY_CODE);
             labelDiscountLabel.setVisible(false);
             labelDiscount.setVisible(false);
         }
@@ -192,7 +200,8 @@ public class QuotationController extends Controller {
             alert = new Alert(AlertType.ERROR, "Your order is empty!!", ButtonType.OK);
             alert.showAndWait();
         } else {
-            alert = new Alert(AlertType.INFORMATION, "Is this order correct?", ButtonType.YES, ButtonType.NO);
+            alert = new Alert(AlertType.INFORMATION, "Is this order correct?",
+                    ButtonType.YES, ButtonType.NO);
             alert.showAndWait();
 
             if (alert.getResult() == ButtonType.YES) {
@@ -209,7 +218,9 @@ public class QuotationController extends Controller {
 
     @FXML
     private void handleCancelButton() {
-        Alert alert = new Alert(AlertType.WARNING, "Do you want to cancel the current order?", ButtonType.YES, ButtonType.NO);
+        Alert alert = new Alert(
+                AlertType.WARNING, "Do you want to cancel the current order?",
+                ButtonType.YES, ButtonType.NO);
         alert.showAndWait();
         if (alert.getResult() == ButtonType.YES)
             app.goToScene("StartView.fxml");
@@ -231,19 +242,22 @@ public class QuotationController extends Controller {
             }
         }
         if (soldOutCount >= inventory.size()) {
-            Alert alert = new Alert(AlertType.WARNING, "Sorry, All items are sold out!!", ButtonType.OK);
+            Alert alert = new Alert(AlertType.WARNING,
+                    "Sorry, All items are sold out!!", ButtonType.OK);
             alert.showAndWait();
             return;
         }
 
-        // Get a random item of the inventory that it is not sold out and to not exceed order price limit
+        // Get a random item of the inventory that it is not sold out
+        // and to not exceed order price limit
         int tries = 0;
         boolean cannotAddRandomItem = false;
         while (item == null) {
             tries += 1;
             if (tries > MAX_RANDOM_ITEM_TRIES) {
                 cannotAddRandomItem = true;
-                String msg = "Cannot add random item. Max tries exceeded:" + MAX_RANDOM_ITEM_TRIES +  "!";
+                String msg = "Cannot add random item. Max tries exceeded:"
+                        + MAX_RANDOM_ITEM_TRIES +  "!";
                 log.warning(msg);
                 break;
             }
@@ -263,11 +277,13 @@ public class QuotationController extends Controller {
         displayOrder();
 
         if (cannotAddRandomItem) {
-            Alert alert = new Alert(AlertType.WARNING, "Cannot add random item this time. Try again");
+            Alert alert = new Alert(
+                    AlertType.WARNING, "Cannot add random item this time. Try again");
             alert.showAndWait();
         }
 
-        // If the item it is sold out after the addition, we need to refresh the current view of items
+        // If the item it is sold out after the addition, we need
+        // to refresh the current view of items
         if (item != null && item.isSoldOut())
             goToScreen();
     }
@@ -291,18 +307,22 @@ public class QuotationController extends Controller {
             String msg = "";
             // If it is a pack set also display its items
             if (listOrder.getSelectionModel().getSelectedItem() instanceof PackSet) {
-                msg += ((PackSet) listOrder.getSelectionModel().getSelectedItem()).getItemsWithHeaderString() + "\n\n";
+                msg += ((PackSet) listOrder.getSelectionModel().getSelectedItem())
+                        .getItemsWithHeaderString() + "\n\n";
             }
-            msg += "Do you want to remove " + listOrder.getSelectionModel().getSelectedItem().getName() + "?";
+            msg += "Do you want to remove " + listOrder.getSelectionModel().
+                    getSelectedItem().getName() + "?";
             Alert alert = new Alert(AlertType.WARNING, msg, ButtonType.YES, ButtonType.NO);
             alert.showAndWait();
 
             if (alert.getResult() == ButtonType.YES) {
-                app.getKiosk().removeItemFromOrder(listOrder.getSelectionModel().getSelectedIndex());
+                app.getKiosk().removeItemFromOrder(listOrder.getSelectionModel()
+                        .getSelectedIndex());
                 displayOrder();
                 goToScreen();
             }
         }
-        listOrder.getSelectionModel().clearSelection(listOrder.getSelectionModel().getSelectedIndex());
+        listOrder.getSelectionModel().clearSelection(listOrder.getSelectionModel()
+                .getSelectedIndex());
     }
 }

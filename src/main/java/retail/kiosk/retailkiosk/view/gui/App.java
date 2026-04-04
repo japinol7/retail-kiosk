@@ -35,15 +35,19 @@ public class App extends Application {
 
     @Override
     public void stop() throws Exception {
-        timer.cancel();
-        timer.purge();
+        if (timer != null) {
+            timer.cancel();
+            timer.purge();
+        }
         super.stop();
         log.info(LOG_END_APP_MSG);
     }
 
     public void timerStop() throws Exception {
-        timer.cancel();
-        timer.purge();
+        if (timer != null) {
+            timer.cancel();
+            timer.purge();
+        }
     }
 
     public static void main(String[] args) {

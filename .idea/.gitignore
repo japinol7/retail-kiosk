@@ -8,3 +8,6 @@
 /dataSources.local.xml
 # GitHub Copilot persisted chat sessions
 /copilot/chatSessions
+/inspectionProfiles/Project_Default.xml
+/aws.xml
+/IntelliLang.xml

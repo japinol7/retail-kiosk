@@ -9,10 +9,12 @@ public class ActionFigureMovable extends ActionFigure {
         setMovable(true);
     }
 
-    public ActionFigureMovable(int id, String name, String description, String imageSrc, double grossPrice,
-                               double tax, String material, boolean isSpecialEdition,
-                               int stock) throws ItemException {
-        super(id, name, description, imageSrc, grossPrice, tax, material, isSpecialEdition, stock);
+    public ActionFigureMovable(
+            int id, String name, String description, String imageSrc, double grossPrice,
+            double tax, String material, boolean isSpecialEdition, int stock
+    ) throws ItemException {
+        super(id, name, description, imageSrc, grossPrice, tax,
+                material, isSpecialEdition, stock);
         setMovable(true);
     }
 
@@ -22,6 +24,7 @@ public class ActionFigureMovable extends ActionFigure {
             super.setMovable(true);
             return;
         }
-        log.warning("You cannot set a movable action figure to be not movable: [" + getId() + "] " + getName());
+        log.warning("You cannot set a movable action figure to be not movable: " +
+                "[" + getId() + "] " + getName());
     }
 }

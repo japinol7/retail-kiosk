@@ -44,8 +44,9 @@ public class Kiosk {
     }
 
     public void createOrder() {
-        // If this is not the first order and the last order has already been created but has not been committed,
-        // decreases 1 expected purchase for all the items of the last order.
+        // If this is not the first order and the last order has already been created
+        // but has not been committed, decreases 1 expected purchase for all the
+        // items of the last order.
         if (order != null && !order.isConfirmed()) {
             for (Item item : getItemsOrder())
                 item.decrease1ExpectedPurchase();
@@ -178,7 +179,8 @@ public class Kiosk {
                 checkPromotionDiscountConstraints(item);
                 // Add the item to the promotion discounts because no constraint has been violated
                 promotionDiscounts.add(item);
-                // Add the new id to itemIds, that represents all the distinct ids in the promotion discounts.
+                // Add the new id to itemIds, that represents all the distinct ids
+                // in the promotion discounts.
                 promotionDiscountNames.add(item.getName());
             } catch (Exception e) {
                 System.err.println("Error loading promotion discount: " + e.getMessage());

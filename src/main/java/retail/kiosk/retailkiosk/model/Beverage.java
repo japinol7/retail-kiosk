@@ -17,10 +17,13 @@ public class Beverage extends Item {
         setAlcoholVolume(0);
     }
 
-    public Beverage(int id, String name, String description, int centiliters, double alcoholVolume,
-                    boolean isFizzy, String imageSrc, double grossPrice, double tax,
-                    String material, boolean isSpecialEdition, int stock) throws ItemException {
-        super(id, name, description, imageSrc, grossPrice, tax, material, false, isSpecialEdition, stock);
+    public Beverage(
+            int id, String name, String description, int centiliters, double alcoholVolume,
+            boolean isFizzy, String imageSrc, double grossPrice, double tax,
+            String material, boolean isSpecialEdition, int stock
+    ) throws ItemException {
+        super(id, name, description, imageSrc, grossPrice, tax,
+                material, false, isSpecialEdition, stock);
         setCentiliters(centiliters);
         setAlcoholVolume(alcoholVolume);
         setFizzy(isFizzy);

@@ -14,9 +14,12 @@ public class PackSet extends Item {
         items = new LinkedList<Item>();
     }
 
-    public PackSet(int id, String name, String description, String imageSrc, double grossPrice,
-                   double tax, List<Item> items) throws ItemException {
-        super(id, name, description, imageSrc, grossPrice, tax, "", false, false, 0);
+    public PackSet(
+            int id, String name, String description, String imageSrc, double grossPrice,
+            double tax, List<Item> items
+    ) throws ItemException {
+        super(id, name, description, imageSrc, grossPrice, tax,
+                "", false, false, 0);
         setItems(items);
         log.info(this.toStringVerbose());
     }
@@ -29,7 +32,8 @@ public class PackSet extends Item {
         // Check that no element of the new list of items is a pack set.
         for (Item item : items) {
             if (item instanceof PackSet) {
-                throw new ItemException("Cannot add a pack set as an element of another pack set. PackSet id: " + getId() + "!!");
+                throw new ItemException("Cannot add a pack set as an element of another " +
+                        "pack set. PackSet id: " + getId() + "!!");
             }
         }
         this.items = items;
@@ -37,7 +41,8 @@ public class PackSet extends Item {
 
     public void addItem(Item item) throws ItemException {
         if (item instanceof PackSet) {
-            throw new ItemException("Cannot add a pack set as an element of another pack set. PackSet id: " + item.getId() + "!!");
+            throw new ItemException("Cannot add a pack set as an element of another " +
+                    "pack set. PackSet id: " + item.getId() + "!!");
         }
         items.add(item);
     }
@@ -112,12 +117,15 @@ public class PackSet extends Item {
     public String getItemsString(String linePrefix) {
         StringBuilder text = new StringBuilder();
 
-        // Add the items name and information without the price. Gets the part of the String that precedes three points.
+        // Add the items' name and information without the price.
+        // Gets the part of the String that precedes three points.
         for (Item item : items) {
-            text.append(linePrefix).append(item.toString().split("[.][.][.]")[0]).append("\n");
+            text.append(linePrefix).append(
+                    item.toString().split("[.][.][.]")[0]
+                    ).append("\n");
         }
         // Remove last change of line
-        if (text.length() > 0)
+        if (!text.isEmpty())
             text.deleteCharAt(text.length() - 1);
 
         return text.toString();

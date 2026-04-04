@@ -82,11 +82,13 @@ public class Inventory {
         }
         // Check if the item's id is unique in the inventory.
         if (itemIds.contains(item.getId())) {
-            throw new Exception("There's already one item in the inventory with id " + item.getId() + ". The id must be unique!!");
+            throw new Exception("There's already one item in the inventory with id "
+                    + item.getId() + ". The id must be unique!!");
         }
         // When the item is a PackSet, check if it has at least 2 elements.
         if (item instanceof PackSet && ((PackSet) item).getItems().size() < 2) {
-            throw new ItemException("A pack set must have at least two items. PackSet id: " + item.getId() + " !!");
+            throw new ItemException("A pack set must have at least two items. PackSet id: "
+                    + item.getId() + " !!");
         }
     }
 
@@ -105,7 +107,8 @@ public class Inventory {
     private ActionFigureAccessory createActionFigureAccessory(String[] items) throws Exception {
         return new ActionFigureAccessory(Integer.parseInt(items[0]), items[2], items[3],
                 items[5], Boolean.parseBoolean(items[4]), Double.parseDouble(items[6]),
-                Double.parseDouble(items[7]), items[8], Boolean.parseBoolean(items[9]), Integer.parseInt(items[10]));
+                Double.parseDouble(items[7]), items[8], Boolean.parseBoolean(items[9]),
+                Integer.parseInt(items[10]));
     }
 
     private Beverage createBeverage(String[] items) throws Exception {
@@ -124,7 +127,8 @@ public class Inventory {
     private ClothesHat createClothesHat(String[] items) throws Exception {
         return new ClothesHat(Integer.parseInt(items[0]), items[2], items[3],
                 Boolean.parseBoolean(items[4]), items[5], Double.parseDouble(items[6]),
-                Double.parseDouble(items[7]), items[8], Boolean.parseBoolean(items[9]), Integer.parseInt(items[10]));
+                Double.parseDouble(items[7]), items[8], Boolean.parseBoolean(items[9]),
+                Integer.parseInt(items[10]));
     }
 
     private PackSet createPackSet(String[] items) throws Exception {
@@ -141,14 +145,17 @@ public class Inventory {
             }
         }
 
-        // Check if all the items on the pack set have been found. They must appear in the inventory before the pack set
+        // Check if all the items on the pack set have been found.
+        // They must appear in the inventory before the pack set.
         if (packSetItemsIds.size() != packSetItems.size()) {
-            throw new ItemException("Some items on the pack set do not exist. Remember to put them " +
-                    "before the pack set. PackSet id: " + items[0] + "!!");
+            throw new ItemException("Some items on the pack set do not exist. " +
+                    "Remember to put them before the pack set. PackSet id: "
+                    + items[0] + "!!");
         }
 
         return new PackSet(Integer.parseInt(items[0]), items[2], items[3],
-                items[4], Double.parseDouble(items[5]), Double.parseDouble(items[6]), packSetItems);
+                items[4], Double.parseDouble(items[5]), Double.parseDouble(items[6]),
+                packSetItems);
     }
 
     public ArrayList<Item> getList() {
@@ -158,7 +165,8 @@ public class Inventory {
     public void setList(ArrayList<Item> inventory) {
         this.inventory = inventory;
 
-        // Since the list of items of the inventory has changed, the cache for the distinct ids also has to be remade
+        // Since the list of items of the inventory has changed,
+        // the cache for the distinct ids also has to be remade
         itemIds.clear();
         for (Item item : this.inventory) {
             itemIds.add(item.getId());

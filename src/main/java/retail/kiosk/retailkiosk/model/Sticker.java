@@ -9,9 +9,12 @@ public class Sticker extends Item {
         setUnits(6);
     }
 
-    public Sticker(int id, String name, String description, int units, String imageSrc, double grossPrice, double tax,
-                   String material, boolean isSpecialEdition, int stock) throws ItemException {
-        super(id, name, description, imageSrc, grossPrice, tax, material, false, isSpecialEdition, stock);
+    public Sticker(
+            int id, String name, String description, int units, String imageSrc, double grossPrice,
+            double tax, String material, boolean isSpecialEdition, int stock
+    ) throws ItemException {
+        super(id, name, description, imageSrc, grossPrice, tax,
+                material, false, isSpecialEdition, stock);
         setUnits(units);
     }
 
